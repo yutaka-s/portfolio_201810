@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+//　色・フォント設定
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@colorMain: #000;
+@colorSub: #333;
+@colorWhite: #fff;
+@colorGray: #eee;
+@fontfamilyMain: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, 'Yu Gothic', Verdana, Meiryo, sans-serif;
+@fontfamilySub: 'Palanquin Dark', sans-serif !important;
+
+//　ベース設定
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 50.5%;
+
+	@media (min-width: 768px) {
+		font-size: 62.5%;
+	}
+}
+
+body {
+	color: @colorSub;
+	display: none;
+	font-size: 1.6em;
+	font-family: @fontfamilyMain;
+	line-break: strict;
+	word-wrap : break-word;
+	word-break: break-all;
+	overflow-wrap : break-word;
+}
+
+img {
+	vertical-align: top;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	-ms-interpolation-mode: bicubic;
+	-webkit-backface-visibility: hidden;
+}
+
+img,
+a img {
+	border: 0;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+	color: @colorSub;
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: all ease-in-out .3s;
+	transition: all ease-in-out .3s;
+	cursor: pointer;
+}
+
+a:hover {
+	opacity: 0.5;
+	-webkit-transform: translateY(-2px);
+	transform: translateY(-2px);
+}
+
+li {
+	list-style: none;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+//　見出し
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.H1heading {
+	line-height: 1.8em;
+	text-align: center;
+	margin-bottom: 60px;
+	span {
+		font-family: @fontfamilySub;
+		font-size: 1.8em;
+		letter-spacing: .2em;
+	}
+	h1 {
+		font-size: 1em;
+		font-weight: normal;
+		letter-spacing: 0.2em;
+	}
+}
+
+.H2heading {
+	h2 {
+		font-size: 1.5em;
+		padding: 0 0 5px 5px;
+		margin-bottom: 30px;
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: auto;
+			width: 100%;
+			height: 1px;
+			bottom: 0;
+			left: 0;
+			background: @colorSub;
+			background: -webkit-linear-gradient(left, @colorSub 0%, @colorWhite 100%);
+			background: linear-gradient(to right, @colorSub 0%, @colorWhite 100%);
+		}
+	}
+}
+
+.H3heading {
+	h3 {
+		font-size: 1.2em;
+		margin-bottom: 12px;
+		padding-left: 24px;
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: 12px;
+			height: 12px;
+			background: @colorGray;
+		}
+	}
+}
+
+//　詳細を見るボタン
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.moreBtn {
+	text-align: center;
+	padding: 20px 0;
+	a {
+		border: 1px solid @colorSub;
+		display: inline-block;
+		letter-spacing: .2em;
+		padding: 10px 50px;
+		&:hover {
+			box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+		}
+	}
+}
+
+//　フェードインアニメーション
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.fadein {
+		opacity : 0;
+		transform : translate(0, 50px);
+		transition : all 1s;
+}
+.fadein.scrollin {
+		opacity : 1;
+		transform : translate(0, 0);
+}

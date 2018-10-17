@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+//　サイドバー
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#sidebar {
+
+	//　バナー
+	///////////////////////////////////////////
+	.sbBanner {
+		text-align: center;
+		margin-bottom: 20px;
+		a {
+			display: block;
+		}
+	}
+	//　サイドナビ
+	///////////////////////////////////////////
+	.sideTitle {
+		background: @colorSub;
+		color: @colorWhite;
+		font-family: @fontfamilySub;
+		font-size: 1.2em;
+		font-weight: normal;
+		text-align: center;
+		letter-spacing: .1em;
+		margin-bottom: 10px;
+		padding: 6px 0 8px;
+	}
+	.sideNavi {
+		margin-bottom: 20px;
+
+		a {
+			border-bottom: 1px solid #ccc;
+			display: block;
+			padding: 10px 20px;
+
+			&:hover {
+				background: @colorGray;
+			}
+		}
+	}
+
+	//　最新の投稿
+	///////////////////////////////////////////
+	.sidePost {
+		margin-bottom: 20px;
+
+		a {
+			border-bottom: 1px solid #ccc;
+			display: block;
+			padding: 10px;
+
+			&:hover {
+				background: @colorGray;
+			}
+
+			.date {
+				color: #ccc;
+				font-weight: bold;
+			}
+			.title {
+				font-weight: normal;
+				font-size: 1em;
+			}
+		}
+	}
+}

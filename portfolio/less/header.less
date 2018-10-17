@@ -1,0 +1,290 @@
+@charset "utf-8";
+
+//　ヘッダー・メインビジュアル
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#mv {
+	position: relative;
+	width: 100%;
+
+	//　スライダー
+	///////////////////////////////////////////
+	.pcMv {
+		display: none;
+	}
+	.spMv {
+		display: block;
+	}
+
+	@media (min-width: 768px) {
+		.pcMv {
+			display: block;
+		}
+		.spMv {
+			display: none;
+		}
+	}
+
+	//　サイトロゴ
+	///////////////////////////////////////////
+	h1 {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		color: @colorWhite;
+		font-weight: normal;
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+		text-align: center;
+		margin: 0;
+		width: 100%;
+
+		a {
+			color: @colorWhite;
+			display: block;
+			font-family: @fontfamilySub;
+
+			span {
+				display: block;
+			}
+			.mainTitle {
+				font-size: 1.2em;
+				letter-spacing: .2em;
+			}
+			.subTitle {
+				font-size: .5em;
+				letter-spacing: 0.6em;
+				text-align: center;
+				padding: 0 20px;
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		h1 {
+			top: 35%;
+			a {
+			display: inline-block;
+
+				.mainTitle {
+					font-size: 2.5em;
+					letter-spacing: .3em;
+				}
+			}
+		}
+	}
+	@media (min-width: 1200px) {
+		h1 {
+			top: 40%;
+
+				a .mainTitle {
+				font-size: 2.2em;
+			}
+		}
+	}
+	@media (min-width: 1600px) {
+		h1 a .mainTitle {
+			font-size: 4em;
+		}
+	}
+}
+
+//　グローバルナビ（トップページ）
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#globalNav {
+	background: rgba(0,0,0,.8);
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	z-index: 2000;
+
+	ul {
+		display: block;
+		margin: 70px 0 0;
+
+		li {
+			text-align: center;
+
+		a {
+				color: @colorWhite !important;
+				font-weight: bold;
+				font-size: 1.4em;
+				display: block;
+				letter-spacing: 0.2em;
+				margin-bottom: 20px;
+			}
+		}
+
+		.toggleClose {
+			color: @colorWhite;
+			cursor: pointer;
+			font-size: 2.8em;
+			position: fixed;
+			top: 10px;
+			right: 20px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		background: none;
+		display: block;
+		height: auto;
+		width: auto;
+		z-index: 0;
+		position: absolute;
+		top: 90%;
+		left: 50%;
+		margin: 0;
+		width: 100%;
+		-webkit-transform: translate(-50%, -100%);
+		transform: translate(-50%, -100%);
+
+		ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: 800px;
+			margin: 0 auto;
+
+			li {
+				flex: 1 0 auto;
+
+			a {
+					font-size: 1em;
+					margin: 0;
+				}
+			}
+			.toggleClose {
+				display: none;
+			}
+		}
+	}
+}
+
+//　グローバルナビ（追従）
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.navFixed {
+	display: none;
+
+	@media (min-width: 768px) {
+		background: @colorSub;
+		box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+		display: block;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 9999;
+		-webkit-transition: .8s ease-in-out;
+		transition: .8s ease-in-out;
+
+		ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: 800px;
+			margin: 0 auto;
+
+			li {
+				text-align: center;
+				flex: 1 0 auto;
+
+			a {
+				color: @colorWhite;
+				display: block;
+				font-weight: bold;
+				font-size: 1em;
+				margin: 0;
+				padding: 15px 20px;
+				}
+			}
+			i {
+				display: none;
+			}
+		}
+	}
+}
+
+.navMove {
+	-webkit-transform: translateY(-80px);
+	transform: translateY(-80px);
+}
+
+
+
+//　スマートフォン用ヘッダー
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+header {
+	margin-top: 45px;
+	position: relative;
+
+	#spHeader {
+		background: @colorSub;
+		box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+		display: block;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+
+		.siteTitle {
+			color: @colorWhite;
+			display: inline-block;
+			font-weight: bold;
+			font-size: 1.2em;
+			letter-spacing: 0.5em;
+			padding: 15px 20px;
+		}
+		.toggleOpen {
+			color: @colorWhite;
+			cursor: pointer;
+			font-size: 2.5em;
+			position: fixed;
+			top: 10px;
+			right: 15px;
+		}
+
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	@media (min-width: 768px) {
+		margin-top: 0;
+	}
+}
+
+//　下層　ヘッダー・メインビジュアル
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+body:not(.home) {
+
+	#mv {
+		background: none;
+		height: 0;
+
+		.mvSlider {
+			display: none;
+		}
+
+		h1 {
+			display: none;
+		}
+
+		@media (min-width: 768px) {
+			background: url("../images/lv.jpg") center / cover no-repeat;
+			height: 300px;
+
+			h1 {
+				display: inline-block;
+
+					a .mainTitle {
+						font-size: 1.8em;
+					}
+				}
+			}
+
+		@media (min-width: 1600px) {
+			h1 a .mainTitle {
+				font-size: 2em;
+			}
+		}
+	}
+}

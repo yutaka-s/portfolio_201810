@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+//　スクロールトップ
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#scrollTop {
+	text-align: center;
+	margin: 20px 0;
+	i {
+		cursor: pointer;
+		font-size: 2em;
+	}
+
+	@media (min-width: 768px) {
+		margin: 50px 0;
+	}
+}
+
+//　フッター
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+footer {
+	background: @colorSub;
+
+	//　フッターナビ
+	///////////////////////////////////////////
+	#footerNavi {
+		border-bottom: 1px solid #000;
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 auto;
+			padding: 20px 0;
+			text-align: center;
+
+			li {
+				width: 33.3%;
+				display: inline-block;
+
+				a {
+					color: #fff;
+					display: inline-block;
+					font-size: 0.9em;
+					padding: 5px 0;
+					width: 100%;
+				}
+			}
+		}
+		@media (min-width: 768px) {
+			ul {
+				max-width: 1200px;
+				display: block;
+
+				li {
+					width: auto;
+
+					a {
+						width: auto;
+						margin: 5px 10px;
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+
+	//　フッターロゴ
+	///////////////////////////////////////////
+	.footerLogo {
+		margin: 40px 0;
+		text-align: center;
+
+		a {
+			color: @colorWhite;
+			display: inline-block;
+			text-align: center;
+
+			span {
+				display: block;
+			}
+			.mainTitle {
+				font-weight: bold;
+				font-size: 2em;
+				margin: 0 0 10px;
+				letter-spacing: 0.5em;
+			}
+			.subTitle {
+				font-size: .6em;
+				letter-spacing: 0.6em;
+			}
+		}
+		@media (min-width: 768px) {
+			margin: 80px 0;
+		}
+	}
+
+	//　コピーライト
+	///////////////////////////////////////////
+	#copyright {
+		color: @colorWhite;
+		text-align: center;
+		padding: 10px 0;
+	}
+}

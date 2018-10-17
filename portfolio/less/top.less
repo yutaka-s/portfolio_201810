@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+//　トップページセクション
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//　当サイトについて
+///////////////////////////////////////////
+#about {
+	border-bottom: 1px solid @colorGray;
+
+	.sectionLay {
+		padding: 60px 20px 40px;
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 1.8em;
+		letter-spacing: .2em;
+		margin-bottom: 40px;
+	}
+}
+
+//　コーディングについて
+///////////////////////////////////////////
+#skills {
+	border-bottom: 1px solid @colorGray;
+
+	.sectionLay {
+		padding: 60px 20px 40px;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		h2 {
+			font-size: 1.8em;
+			letter-spacing: 0.1em;
+			padding-bottom: 10px;
+			margin-bottom: 40px;
+			text-align: center;
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 80px;
+				height: 1px;
+				background: @colorSub;
+			}
+		}
+		#front {
+			.col:last-child {
+				padding: 45px 0 30px;
+			}
+		}
+		#server {
+			.col:first-child {
+				padding: 45px 0 30px;
+			}
+		}
+
+	@media (min-width: 768px) {
+		.row {
+				display: flex;
+				justify-content: center;
+			}
+
+			#front {
+				margin-bottom: 100px;
+				.col {
+					&:first-child {
+						width: 55%;
+					}
+					&:last-child {
+						background: #fff;
+						-webkit-transform: translate(-50px, 50px);
+						transform: translate(-50px, 50px);
+						padding: 4%;
+						width: 45%;
+					}
+				}
+			}
+			#server {
+				margin-bottom: 50px;
+				.col {
+					&:last-child {
+						width: 55%;
+					}
+					&:first-child {
+						background: #fff;
+						-webkit-transform: translate(50px, 50px);
+						transform: translate(50px, 50px);
+						padding: 4%;
+						width: 45%;
+					}
+				}
+			}
+		}
+	}
+}
+
+//　お知らせ
+///////////////////////////////////////////
+#news {
+	border-bottom: 1px solid @colorGray;
+
+	.sectionLay {
+		padding: 60px 20px;
+		max-width: 1000px;
+		margin: 0 auto;
+
+		article {
+			width: 100%;
+
+				a {
+				display: flex;
+				align-items: center;
+
+				.date {
+					display: block;
+					width: 30%;
+				}
+				.title {
+					font-size: 1em;
+					font-weight: normal;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					width: 70%;
+				}
+				@media (min-width: 768px) {
+					.date {
+						width: 20%;
+					}
+					.title {
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+
+//　プロフィール
+///////////////////////////////////////////
+#profile {
+	.sectionLay {
+		padding: 60px 20px;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		.col:last-child {
+			padding: 40px 0 20px;
+		}
+	}
+	@media (min-width: 768px) {
+		.sectionLay .row {
+			display: flex;
+			justify-content: space-between;
+
+			.col {
+				padding: 0;
+				width: 48%;
+			}
+		}
+	}
+}
