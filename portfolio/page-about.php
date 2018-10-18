@@ -51,9 +51,18 @@
 		</section>
 		<section>
 			<div class="H2heading">
-				<h2>制作期間</h2>
-				<p>当サイトの制作期間は、4～5営業日程になります。</p>
+				<h2>ソースコード</h2>
 			</div>
+			<p>ソースコードはGitHubでご確認ください。</p>
+			<div class="moreBtn" style="text-align:right;">
+				<a href="https://github.com/yutaka-s/portfolio_201810" target="_blank" title="github">詳細を見る</a>
+			</div>
+		</section>
+		<section>
+			<div class="H2heading">
+				<h2>制作期間</h2>
+			</div>
+			<p>当サイトの制作期間は、4～5営業日程になります。</p>
 		</section>
 	</main>
 <?php get_sidebar(); ?>
